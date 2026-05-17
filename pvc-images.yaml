@@ -1,0 +1,38 @@
+---
+# PersistentVolume + PVC for homepage images on nfs-proxmox
+# Replaces the former homepage-images PVC on nfs-truenas (retired 2026-05-17)
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: homepage-images-v2-proxmox
+spec:
+  accessModes:
+    - ReadWriteMany
+  capacity:
+    storage: 1Gi
+  mountOptions:
+    - nfsvers=4.1
+    - hard
+    - timeo=600
+    - retrans=3
+  nfs:
+    path: /zp3/k8s-nfs/volumes/homepage-images-v2
+    server: proxmox.petersimmons.com
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: nfs-proxmox
+  volumeMode: Filesystem
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: homepage-images-v2
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: nfs-proxmox
+  volumeMode: Filesystem
+  volumeName: homepage-images-v2-proxmox

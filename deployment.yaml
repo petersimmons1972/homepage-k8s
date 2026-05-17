@@ -29,7 +29,7 @@ spec:
           - 8.8.8.8
       containers:
       - name: homepage
-        image: ghcr.io/gethomepage/homepage:v0.9.5
+        image: ghcr.io/gethomepage/homepage:v0.10.0
         imagePullPolicy: IfNotPresent
         ports:
         - name: http
@@ -37,13 +37,33 @@ spec:
           protocol: TCP
         env:
         - name: HOMEPAGE_ALLOWED_HOSTS
-          value: "homepage.petersimmons.com"
+          value: "homepage.petersimmons.com,localhost,127.0.0.1"
         - name: LOG_LEVEL
           value: "debug"
         - name: KUBERNETES_SERVICE_HOST
           value: "kubernetes.default.svc"
         - name: KUBERNETES_SERVICE_PORT
           value: "443"
+        - name: NEXT_PUBLIC_DISABLE_CACHE
+          value: "true"
+        - name: DISABLE_BUILTIN_AUTH
+          value: "true"
+        - name: HOMEPAGE_VAR_API_URL_PROVIDER
+          value: "http://localhost:3000"
+        - name: NEXT_PUBLIC_API_URL
+          value: "https://homepage.petersimmons.com"
+        - name: HOMEPAGE_DISABLE_SSR
+          value: "true"
+        - name: NODE_ENV
+          value: "production"
+        - name: HOMEPAGE_CONFIG_WATCH_MODE
+          value: "true"
+        - name: HOMEPAGE_FORCE_REFRESH
+          value: "true"
+        - name: NEXT_PUBLIC_DISABLE_CACHE
+          value: "true"
+        - name: SKIP_BUILD
+          value: "true"
         volumeMounts:
         - mountPath: /app/config/custom.js
           name: homepage-config
@@ -74,9 +94,14 @@ spec:
           subPath: proxmox.yaml
         - mountPath: /app/config/logs
           name: logs
+        - mountPath: /app/public/images
+          name: homepage-images
       volumes:
       - name: homepage-config
         configMap:
           name: homepage
       - name: logs
         emptyDir: {}
+      - name: homepage-images
+        persistentVolumeClaim:
+          claimName: homepage-images-v2
