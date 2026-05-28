@@ -1,0 +1,35 @@
+- Developer:
+  - Github:
+    - abbr: GH
+      href: https://github.com/
+  - Dashboard Icons:
+    - abbr: DI
+      href: https://dashboardicons.com/ 
+  - Homepage: 
+    - abbr: HP
+      href: https://gethomepage.dev/
+  - Stable Diffusion:
+    - abbr: SD
+      href: https://levithan.petersimmons.com:7680
+  - ROCm Docker Image Builds:
+    - abbr: ROCm
+      href: https://rocm.docs.amd.com/projects/install-on-linux/en/latest/install/3rd-party/pytorch-install.html#using-pytorch-rocm-docker-image          
+- SentinelOne:
+  - Escalation Process:
+    - abbr: EP
+      href: https://sentinelone.atlassian.net/wiki/spaces/SP/pages/2120188022/Technical+Support+Internal+Escalation+Process
+  - Migration Request:
+    - abbr: MR
+      href: https://docs.google.com/forms/d/e/1FAIpQLSfdqdysn4pDAbvJkLNnDtDGUShZrj5uds9XH2nx-Y1PB_CwGg/viewform
+  - SE Collaboration:
+    - abbr: SE
+      href: https://drive.google.com/drive/folders/1FErWdMbQhx0l-Et_IrBERx022Yy-4dnY
+  - BAS Tools on Windows:
+    - abbr: BAS
+      href: https://community.sentinelone.com/s/article/000008603
+  - BAS Tools on Linux:
+    - abbr: CWS
+      href: https://community.sentinelone.com/s/article/000008604
+  - CNS Unified Demo:
+    - abbr: CNS
+      href: https://sentinelone.atlassian.net/wiki/spaces/SP/pages/4574838785/Unified+CNS+Demo+-+Prometheus

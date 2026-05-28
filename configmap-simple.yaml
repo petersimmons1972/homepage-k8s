@@ -1,5 +1,5 @@
 ---
-# configmap-updated.yaml
+# configmap-simple.yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -9,16 +9,15 @@ metadata:
     app.kubernetes.io/name: homepage
 data:
   kubernetes.yaml: |
-    mode: disabled
+    mode: cluster
   settings.yaml: |
     theme: dark
     background:
-      image: https://images.unsplash.com/photo-1502790671504-542ad42d5189?auto=format&fit=crop&w=2560&q=80
+      image: https://images.unsplash.com/photo-1485470733090-0aae1788d5af?q=80&w=2417&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
       blur: sm # sm, "", md, xl... see https://tailwindcss.com/docs/backdrop-blur
       saturate: 50 # 0, 50, 100... see https://tailwindcss.com/docs/backdrop-saturate
       brightness: 50 # 0, 50, 75... see https://tailwindcss.com/docs/backdrop-brightness
-      opacity: 50 # 0-100
-
+      opacity: 20 # 0-100
   custom.css: ""
   custom.js: ""
   bookmarks.yaml: |
@@ -40,7 +39,10 @@ data:
           href: https://rocm.docs.amd.com/projects/install-on-linux/en/latest/install/3rd-party/pytorch-install.html#using-pytorch-rocm-docker-image          
     
   services.yaml: |
-    - AI Tools:
+    - Work:
+      - GMail:
+          href: https://mail.google.com/mail/u/0/#inbox
+          icon: gmail
       - Grok:
           href: https://x.ai/grok
           icon: https://x.ai/favicon.ico
@@ -50,22 +52,9 @@ data:
       - WindSurf:
           href: https://windsurf.com/
           icon: https://windsurf.com/favicon.ico
-      - Claude Usage:
-          href: https://claude.ai/settings/usage
-          icon: https://claude.ai/favicon.ico
-      - Claude Desktop:
-          href: https://claude.ai/new
-          icon: https://claude.ai/favicon.ico
-      - Perplexity:
-          href: https://perplexity.ai
-          icon: si-perplexity
-    - Work:
-      - GMail:
-          href: https://mail.google.com/mail/u/0/#inbox
-          icon: gmail
       - LinkedIn:
           href: https://www.linkedin.com/feed/
-          icon: mdi-linkedin
+          icon: https://linkedin.com/favicon.ico
       - GitHub:
           href: https://github.com/
           icon: https://github.com/favicon.ico
@@ -82,9 +71,6 @@ data:
       - Traefik:
           href: https://traefik.petersimmons.com/
           icon: traefik
-      - Linkerd:
-          href: https://linkerd.petersimmons.com/
-          icon: https://linkerd.io/logos/linkerd.png
       - Open-WebUI:
           href: https://open-webui.petersimmons.com/
           icon: open-webui
@@ -94,7 +80,7 @@ data:
     - News & Entertainment:
       - YouTube:
           href: https://Youtube.com/
-          icon: youtube
+          icon: youtube.png
       - UnSplash:
           href: https://unsplash.com/
           icon: https://unsplash.com/favicon.ico
@@ -107,7 +93,7 @@ data:
     - Services:
       - Dashlane:
           href: https://dashlane.com/
-          icon: si-dashlane
+          icon: https://www.dashlane.com/uploads/2023/11/Home-Header-Image-svg.png
       - Proxmox:
           href: https://pve.petersimmons.com:8006
           icon: proxmox
@@ -120,29 +106,15 @@ data:
       - Pihole 231:
           href: https://192.168.0.231/admin
           icon: pi-hole
-          widget:
-            type: pihole
-            url: http://192.168.0.231
-            version: 6
-            key: 6BQCd9H0JeJmLsnoYZ2q7DCwq0owTznkkxj0Ero/W8g=
       - Pihole 232:
           href: https://192.168.0.232/admin
           icon: pi-hole
-          widget:
-            type: pihole
-            url: http://192.168.0.232
-            version: 6
-            key: DMnzOB1W/a2LmiTnXoXD2yCAI1R3cjTiTU2qh5iyC6Q=
       - UniFi:
           href: https://192.168.0.1
           icon: unifi
       - Tailscale:
           href: https://login.tailscale.com/
           icon: tailscale
-          widget:
-            type: tailscale
-            deviceid: n42sgy6CeC11CNTRL
-            key: tskey-api-kbDZk13sW521CNTRL-uu7QcsV84UL9z4egfb2wTL5Zxt6i9ENk
       - Truenas Scale:
           href: https://trunas.petersimmons.com/
           icon: truenas
@@ -159,23 +131,31 @@ data:
       - Seeking Alpha:
           href: https://seekingalpha.com/
           icon: https://seekingalpha.com/favicon.ico
-      - Mission Wealth:
-          href: https://missionwealth.portal.tamaracinc.com/Login.aspx
-          icon: https://missionwealth.portal.tamaracinc.com/favicon.ico
+      - Coinbase:
+          href: https://coinbase.com/
+          icon: https://coinbase.com/favicon.ico
           
   widgets.yaml: |
+    - kubernetes:
+        cluster:
+          show: true
+          cpu: true
+          memory: true
+          showLabel: true
+          label: "cluster"
+        nodes:
+          show: true
+          cpu: true
+          memory: true
+          showLabel: true
     - resources:
         backend: resources
         expanded: true
         cpu: true
         memory: true
+        network: default
     - search:
         provider: custom
-        url: https://searxng.petersimmons.com/search?q=
         target: _blank
+        url: https://searxng.petersimmons.com/search?q=
   docker.yaml: ""
-  proxmox.yaml: |
-    url: https://pve.petersimmons.com:8006
-    username: root@pam!homepage
-    password: f036ba38-be17-4cec-aebe-907a319cc15c
-    node: pve

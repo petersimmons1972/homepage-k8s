@@ -1,0 +1,33 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: homepage
+  namespace: default
+  labels:
+    app.kubernetes.io/name: homepage
+data:
+  kubernetes.yaml: |
+    mode: disabled
+  settings.yaml: |
+    theme: light
+    title: "Fixed Homepage"
+  services.yaml: |
+    - Work:
+        - GMail:
+            href: https://mail.google.com
+            icon: gmail
+  bookmarks.yaml: |
+    - Developer:
+        - Github:
+            abbr: GH
+            href: https://github.com/
+  widgets.yaml: |
+    - resources:
+        backend: resources
+        expanded: true
+        cpu: true
+        memory: true
+  docker.yaml: ""
+  custom.css: ""
+  custom.js: ""

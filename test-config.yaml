@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: homepage-test
+  namespace: default
+data:
+  services.yaml: |
+    - Test:
+        - Test Service:
+            href: https://example.com
+            icon: test
+  settings.yaml: |
+    theme: dark

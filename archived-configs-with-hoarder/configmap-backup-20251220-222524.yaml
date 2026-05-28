@@ -29,6 +29,9 @@ data:
       - Dashboard Icons:
         - abbr: DI
           href: https://dashboardicons.com/ 
+      - Karakeep:
+        - abbr: KK
+          href: https://karakeep.app/
       - Homepage: 
         - abbr: HP
           href: https://gethomepage.dev/
@@ -40,7 +43,10 @@ data:
           href: https://rocm.docs.amd.com/projects/install-on-linux/en/latest/install/3rd-party/pytorch-install.html#using-pytorch-rocm-docker-image          
     
   services.yaml: |
-    - AI Tools:
+    - Work:
+      - GMail:
+          href: https://mail.google.com/mail/u/0/#inbox
+          icon: gmail
       - Grok:
           href: https://x.ai/grok
           icon: https://x.ai/favicon.ico
@@ -50,22 +56,9 @@ data:
       - WindSurf:
           href: https://windsurf.com/
           icon: https://windsurf.com/favicon.ico
-      - Claude Usage:
-          href: https://claude.ai/settings/usage
-          icon: https://claude.ai/favicon.ico
-      - Claude Desktop:
-          href: https://claude.ai/new
-          icon: https://claude.ai/favicon.ico
-      - Perplexity:
-          href: https://perplexity.ai
-          icon: si-perplexity
-    - Work:
-      - GMail:
-          href: https://mail.google.com/mail/u/0/#inbox
-          icon: gmail
       - LinkedIn:
           href: https://www.linkedin.com/feed/
-          icon: mdi-linkedin
+          icon: https://linkedin.com/favicon.ico
       - GitHub:
           href: https://github.com/
           icon: https://github.com/favicon.ico
@@ -84,10 +77,13 @@ data:
           icon: traefik
       - Linkerd:
           href: https://linkerd.petersimmons.com/
-          icon: https://linkerd.io/logos/linkerd.png
+          icon: linkerd
       - Open-WebUI:
           href: https://open-webui.petersimmons.com/
           icon: open-webui
+      - Hoarder:
+          href: https://hoarder.petersimmons.com
+          icon: hoarder
       - N8N:
           href: http://leviathan.petersimmons.com:5678
           icon: n8n
@@ -107,42 +103,22 @@ data:
     - Services:
       - Dashlane:
           href: https://dashlane.com/
-          icon: si-dashlane
+          icon: https://www.dashlane.com/uploads/2023/11/Home-Header-Image-svg.png
       - Proxmox:
           href: https://pve.petersimmons.com:8006
           icon: proxmox
-          widget:
-            type: proxmox
-            url: https://pve.petersimmons.com:8006
-            username: root@pam!homepage
-            password: f036ba38-be17-4cec-aebe-907a319cc15c
-            node: pve
       - Pihole 231:
           href: https://192.168.0.231/admin
           icon: pi-hole
-          widget:
-            type: pihole
-            url: http://192.168.0.231
-            version: 6
-            key: 6BQCd9H0JeJmLsnoYZ2q7DCwq0owTznkkxj0Ero/W8g=
       - Pihole 232:
           href: https://192.168.0.232/admin
           icon: pi-hole
-          widget:
-            type: pihole
-            url: http://192.168.0.232
-            version: 6
-            key: DMnzOB1W/a2LmiTnXoXD2yCAI1R3cjTiTU2qh5iyC6Q=
       - UniFi:
           href: https://192.168.0.1
           icon: unifi
       - Tailscale:
           href: https://login.tailscale.com/
           icon: tailscale
-          widget:
-            type: tailscale
-            deviceid: n42sgy6CeC11CNTRL
-            key: tskey-api-kbDZk13sW521CNTRL-uu7QcsV84UL9z4egfb2wTL5Zxt6i9ENk
       - Truenas Scale:
           href: https://trunas.petersimmons.com/
           icon: truenas
@@ -159,9 +135,6 @@ data:
       - Seeking Alpha:
           href: https://seekingalpha.com/
           icon: https://seekingalpha.com/favicon.ico
-      - Mission Wealth:
-          href: https://missionwealth.portal.tamaracinc.com/Login.aspx
-          icon: https://missionwealth.portal.tamaracinc.com/favicon.ico
           
   widgets.yaml: |
     - resources:
@@ -170,9 +143,9 @@ data:
         cpu: true
         memory: true
     - search:
-        provider: custom
-        url: https://searxng.petersimmons.com/search?q=
+        provider: searxng
         target: _blank
+        url: https://searxng.petersimmons.com
   docker.yaml: ""
   proxmox.yaml: |
     url: https://pve.petersimmons.com:8006

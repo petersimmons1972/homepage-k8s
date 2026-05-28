@@ -1,0 +1,90 @@
+apiVersion: v1
+data:
+  bookmarks.yaml: "- Developer:\n  - Github:\n    - abbr: GH\n      href: https://github.com/\n
+    \ - Dashboard Icons:\n    - abbr: DI\n      href: https://dashboardicons.com/
+    \n  - Karakeep:\n    - abbr: KK\n      href: https://karakeep.app/\n  - Homepage:
+    \n    - abbr: HP\n      href: https://gethomepage.dev/\n  - Stable Diffusion:\n
+    \   - abbr: SD\n      href: https://levithan.petersimmons.com:7680\n  - ROCm Docker
+    Image Builds:\n    - abbr: ROCm\n      href: https://rocm.docs.amd.com/projects/install-on-linux/en/latest/install/3rd-party/pytorch-install.html#using-pytorch-rocm-docker-image
+    \         \n"
+  custom.css: ""
+  custom.js: ""
+  docker.yaml: ""
+  kubernetes.yaml: |
+    mode: disabled
+  proxmox.yaml: |
+    url: https://pve.petersimmons.com:8006
+    username: root@pam!homepage
+    password: f036ba38-be17-4cec-aebe-907a319cc15c
+    node: pve
+  services.yaml: "- AI Tools:\n  - Grok:\n      href: https://x.ai/grok\n      icon:
+    https://x.ai/favicon.ico\n  - ChatGPT:\n      href: https://chatgpt.com/\n      icon:
+    https://openai.com/favicon.ico\n  - WindSurf:\n      href: https://windsurf.com/\n
+    \     icon: https://windsurf.com/favicon.ico\n  - Claude Usage:\n      href: https://claude.ai/settings/usage\n
+    \     icon: https://claude.ai/favicon.ico\n  - Claude Desktop:\n      href: https://claude.ai/new\n
+    \     icon: https://claude.ai/favicon.ico\n  - Perplexity:\n      href: https://perplexity.ai\n
+    \     icon: si-perplexity\n- Work:\n  - GMail:\n      href: https://mail.google.com/mail/u/0/#inbox\n
+    \     icon: gmail\n  - LinkedIn:\n      href: https://www.linkedin.com/feed/\n
+    \     icon: mdi-linkedin\n  - GitHub:\n      href: https://github.com/\n      icon:
+    https://github.com/favicon.ico\n- Homelab Services:\n  - Searx:\n      href: https://searxng.petersimmons.com/\n
+    \     icon: searxng\n  - Rancher:\n      href: https://rancher.petersimmons.com/\n
+    \     icon: rancher \n  - Linkwarden:\n      href: https://linkwarden.petersimmons.com/\n
+    \     icon: linkwarden\n  - Traefik:\n      href: https://traefik.petersimmons.com/\n
+    \     icon: traefik\n  - Linkerd:\n      href: https://linkerd.petersimmons.com/\n
+    \     icon: https://linkerd.io/logos/linkerd.png\n  - Open-WebUI:\n      href:
+    https://open-webui.petersimmons.com/\n      icon: open-webui\n  - Hoarder:\n      href:
+    https://hoarder.petersimmons.com\n      icon: hoarder\n  - N8N:\n      href: http://leviathan.petersimmons.com:5678\n
+    \     icon: n8n\n- News & Entertainment:\n  - YouTube:\n      href: https://Youtube.com/\n
+    \     icon: youtube\n  - UnSplash:\n      href: https://unsplash.com/\n      icon:
+    https://unsplash.com/favicon.ico\n  - Ground News:\n      href: https://groundnews.com/\n
+    \     icon: https://groundnews.com/favicon.ico\n  - X:\n      href: https://x.com/\n
+    \     icon: https://x.com/favicon.ico\n- Services:\n  - Dashlane:\n      href:
+    https://dashlane.com/\n      icon: si-dashlane\n  - Proxmox:\n      href: https://pve.petersimmons.com:8006\n
+    \     icon: proxmox\n      widget:\n        type: proxmox\n        url: https://pve.petersimmons.com:8006\n
+    \       username: root@pam!homepage\n        password: f036ba38-be17-4cec-aebe-907a319cc15c\n
+    \       node: pve\n  - Pihole 231:\n      href: https://192.168.0.231/admin\n
+    \     icon: pi-hole\n      widget:\n        type: pihole\n        url: http://192.168.0.231\n
+    \       version: 6\n        key: 6BQCd9H0JeJmLsnoYZ2q7DCwq0owTznkkxj0Ero/W8g=\n
+    \ - Pihole 232:\n      href: https://192.168.0.232/admin\n      icon: pi-hole\n
+    \     widget:\n        type: pihole\n        url: http://192.168.0.232\n        version:
+    6\n        key: DMnzOB1W/a2LmiTnXoXD2yCAI1R3cjTiTU2qh5iyC6Q=\n  - UniFi:\n      href:
+    https://192.168.0.1\n      icon: unifi\n  - Tailscale:\n      href: https://login.tailscale.com/\n
+    \     icon: tailscale\n      widget:\n        type: tailscale\n        deviceid:
+    n42sgy6CeC11CNTRL\n        key: tskey-api-kbDZk13sW521CNTRL-uu7QcsV84UL9z4egfb2wTL5Zxt6i9ENk\n
+    \ - Truenas Scale:\n      href: https://trunas.petersimmons.com/\n      icon:
+    truenas\n  - Cloudflare:\n      href: https://cloudflare.com/\n      icon: cloudflare\n-
+    Financial:\n  - Fidelity:\n      href: https://fidelity.com/\n      icon: https://fidelity.com/favicon.ico\n
+    \ - Motley Fool:\n      href: https://fool.com/\n      icon: https://fool.com/favicon.ico\n
+    \ - Seeking Alpha:\n      href: https://seekingalpha.com/\n      icon: https://seekingalpha.com/favicon.ico\n
+    \ - Mission Wealth:\n      href: https://missionwealth.portal.tamaracinc.com/Login.aspx\n
+    \     icon: https://missionwealth.portal.tamaracinc.com/favicon.ico\n      \n"
+  settings.yaml: |
+    theme: dark
+    background:
+      image: https://images.unsplash.com/photo-1502790671504-542ad42d5189?auto=format&fit=crop&w=2560&q=80
+      blur: sm # sm, "", md, xl... see https://tailwindcss.com/docs/backdrop-blur
+      saturate: 50 # 0, 50, 100... see https://tailwindcss.com/docs/backdrop-saturate
+      brightness: 50 # 0, 50, 75... see https://tailwindcss.com/docs/backdrop-brightness
+      opacity: 50 # 0-100
+  widgets.yaml: |
+    - resources:
+        backend: resources
+        expanded: true
+        cpu: true
+        memory: true
+    - search:
+        provider: custom
+        url: https://searxng.petersimmons.com/search?q=
+        target: _blank
+kind: ConfigMap
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","data":{"bookmarks.yaml":"- Developer:\n  - Github:\n    - abbr: GH\n      href: https://github.com/\n  - Dashboard Icons:\n    - abbr: DI\n      href: https://dashboardicons.com/ \n  - Karakeep:\n    - abbr: KK\n      href: https://karakeep.app/\n  - Homepage: \n    - abbr: HP\n      href: https://gethomepage.dev/\n  - Stable Diffusion:\n    - abbr: SD\n      href: https://levithan.petersimmons.com:7680\n  - ROCm Docker Image Builds:\n    - abbr: ROCm\n      href: https://rocm.docs.amd.com/projects/install-on-linux/en/latest/install/3rd-party/pytorch-install.html#using-pytorch-rocm-docker-image          \n","custom.css":"","custom.js":"","docker.yaml":"","kubernetes.yaml":"mode: disabled\n","proxmox.yaml":"url: https://pve.petersimmons.com:8006\nusername: root@pam!homepage\npassword: f036ba38-be17-4cec-aebe-907a319cc15c\nnode: pve\n","services.yaml":"- AI Tools:\n  - Grok:\n      href: https://x.ai/grok\n      icon: https://x.ai/favicon.ico\n  - ChatGPT:\n      href: https://chatgpt.com/\n      icon: https://openai.com/favicon.ico\n  - WindSurf:\n      href: https://windsurf.com/\n      icon: https://windsurf.com/favicon.ico\n  - Claude Usage:\n      href: https://claude.ai/settings/usage\n      icon: https://claude.ai/favicon.ico\n  - Claude Desktop:\n      href: https://claude.ai/new\n      icon: https://claude.ai/favicon.ico\n  - Perplexity:\n      href: https://perplexity.ai\n      icon: si-perplexity\n- Work:\n  - GMail:\n      href: https://mail.google.com/mail/u/0/#inbox\n      icon: gmail\n  - LinkedIn:\n      href: https://www.linkedin.com/feed/\n      icon: mdi-linkedin\n  - GitHub:\n      href: https://github.com/\n      icon: https://github.com/favicon.ico\n- Homelab Services:\n  - Searx:\n      href: https://searxng.petersimmons.com/\n      icon: searxng\n  - Rancher:\n      href: https://rancher.petersimmons.com/\n      icon: rancher \n  - Linkwarden:\n      href: https://linkwarden.petersimmons.com/\n      icon: linkwarden\n  - Traefik:\n      href: https://traefik.petersimmons.com/\n      icon: traefik\n  - Linkerd:\n      href: https://linkerd.petersimmons.com/\n      icon: https://linkerd.io/logos/linkerd.png\n  - Open-WebUI:\n      href: https://open-webui.petersimmons.com/\n      icon: open-webui\n  - Hoarder:\n      href: https://hoarder.petersimmons.com\n      icon: hoarder\n  - N8N:\n      href: http://leviathan.petersimmons.com:5678\n      icon: n8n\n- News \u0026 Entertainment:\n  - YouTube:\n      href: https://Youtube.com/\n      icon: youtube\n  - UnSplash:\n      href: https://unsplash.com/\n      icon: https://unsplash.com/favicon.ico\n  - Ground News:\n      href: https://groundnews.com/\n      icon: https://groundnews.com/favicon.ico\n  - X:\n      href: https://x.com/\n      icon: https://x.com/favicon.ico\n- Services:\n  - Dashlane:\n      href: https://dashlane.com/\n      icon: si-dashlane\n  - Proxmox:\n      href: https://pve.petersimmons.com:8006\n      icon: proxmox\n      widget:\n        type: proxmox\n        url: https://pve.petersimmons.com:8006\n        username: root@pam!homepage\n        password: f036ba38-be17-4cec-aebe-907a319cc15c\n        node: pve\n  - Pihole 231:\n      href: https://192.168.0.231/admin\n      icon: pi-hole\n      widget:\n        type: pihole\n        url: http://192.168.0.231\n        version: 6\n        key: 6BQCd9H0JeJmLsnoYZ2q7DCwq0owTznkkxj0Ero/W8g=\n  - Pihole 232:\n      href: https://192.168.0.232/admin\n      icon: pi-hole\n      widget:\n        type: pihole\n        url: http://192.168.0.232\n        version: 6\n        key: DMnzOB1W/a2LmiTnXoXD2yCAI1R3cjTiTU2qh5iyC6Q=\n  - UniFi:\n      href: https://192.168.0.1\n      icon: unifi\n  - Tailscale:\n      href: https://login.tailscale.com/\n      icon: tailscale\n      widget:\n        type: tailscale\n        deviceid: n42sgy6CeC11CNTRL\n        key: tskey-api-kbDZk13sW521CNTRL-uu7QcsV84UL9z4egfb2wTL5Zxt6i9ENk\n  - Truenas Scale:\n      href: https://trunas.petersimmons.com/\n      icon: truenas\n  - Cloudflare:\n      href: https://cloudflare.com/\n      icon: cloudflare\n- Financial:\n  - Fidelity:\n      href: https://fidelity.com/\n      icon: https://fidelity.com/favicon.ico\n  - Motley Fool:\n      href: https://fool.com/\n      icon: https://fool.com/favicon.ico\n  - Seeking Alpha:\n      href: https://seekingalpha.com/\n      icon: https://seekingalpha.com/favicon.ico\n  - Mission Wealth:\n      href: https://missionwealth.portal.tamaracinc.com/Login.aspx\n      icon: https://missionwealth.portal.tamaracinc.com/favicon.ico\n      \n","settings.yaml":"theme: dark\nbackground:\n  image: https://images.unsplash.com/photo-1502790671504-542ad42d5189?auto=format\u0026fit=crop\u0026w=2560\u0026q=80\n  blur: sm # sm, \"\", md, xl... see https://tailwindcss.com/docs/backdrop-blur\n  saturate: 50 # 0, 50, 100... see https://tailwindcss.com/docs/backdrop-saturate\n  brightness: 50 # 0, 50, 75... see https://tailwindcss.com/docs/backdrop-brightness\n  opacity: 50 # 0-100\n","widgets.yaml":"- resources:\n    backend: resources\n    expanded: true\n    cpu: true\n    memory: true\n- search:\n    provider: custom\n    url: https://searxng.petersimmons.com/search?q=\n    target: _blank\n"},"kind":"ConfigMap","metadata":{"annotations":{},"labels":{"app.kubernetes.io/name":"homepage"},"name":"homepage","namespace":"default"}}
+  creationTimestamp: "2025-12-19T20:01:14Z"
+  labels:
+    app.kubernetes.io/name: homepage
+  name: homepage
+  namespace: default
+  resourceVersion: "15701200"
+  uid: 8174d896-ab05-4315-8849-bb3aeae9253a

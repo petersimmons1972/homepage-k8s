@@ -1,0 +1,192 @@
+apiVersion: v1
+data:
+  bookmarks.yaml: "- Developer:\n  - Github:\n    - abbr: GH\n      href: https://github.com/\n
+    \ - Dashboard Icons:\n    - abbr: DI\n      href: https://dashboardicons.com/
+    \n  - Homepage:\n    - abbr: HP\n      href: https://gethomepage.dev/\n  - Stable
+    Diffusion:\n    - abbr: SD\n      href: https://levithan.petersimmons.com:7680\n
+    \ - ROCm Docker Image Builds:\n    - abbr: ROCm\n      href: https://rocm.docs.amd.com/projects/install-on-linux/en/latest/install/3rd-party/pytorch-install.html#using-pytorch-rocm-docker-image
+    \         \n"
+  custom.css: ""
+  custom.js: ""
+  docker.yaml: ""
+  kubernetes.yaml: |
+    mode: disabled
+  proxmox.yaml: |
+    url: https://pve.petersimmons.com:8006
+    username: root@pam!homepage
+    password: f036ba38-be17-4cec-aebe-907a319cc15c
+    node: pve
+  services.yaml: |
+    - AI Tools:
+      - Grok:
+          href: https://x.ai/grok
+          icon: https://x.ai/favicon.ico
+      - ChatGPT:
+          href: https://chatgpt.com/
+          icon: https://openai.com/favicon.ico
+      - WindSurf:
+          href: https://windsurf.com/
+          icon: https://windsurf.com/favicon.ico
+      - Claude Usage:
+          href: https://claude.ai/settings/usage
+          icon: https://claude.ai/favicon.ico
+      - Claude Desktop:
+          href: https://claude.ai/new
+          icon: https://claude.ai/favicon.ico
+      - Perplexity:
+          href: https://perplexity.ai
+          icon: si-perplexity
+    - Homelab Services:
+      - Nextcloud:
+          href: https://nextcloud.petersimmons.com/
+          icon: nextcloud
+      - Grafana:
+          href: https://grafana.petersimmons.com/
+          icon: grafana
+      - Prometheus:
+          href: https://prometheus.petersimmons.com/
+          icon: prometheus
+      - Searx:
+          href: https://searxng.petersimmons.com/
+          icon: searxng
+      - Rancher:
+          href: https://rancher.petersimmons.com/
+          icon: rancher
+      - Linkwarden:
+          href: https://linkwarden.petersimmons.com/
+          icon: linkwarden
+      - Traefik:
+          href: https://traefik.petersimmons.com/
+          icon: traefik
+      - Linkerd:
+          href: https://linkerd.petersimmons.com/
+          icon: https://linkerd.io/logos/linkerd.png
+      - Open-WebUI:
+          href: https://open-webui.petersimmons.com/
+          icon: open-webui
+      - N8N:
+          href: https://n8n.petersimmons.com/
+          icon: n8n
+    - Services:
+      - Proxmox:
+          href: https://pve.petersimmons.com:8006
+          icon: proxmox
+          widget:
+            type: proxmox
+            url: https://pve.petersimmons.com:8006
+            username: root@pam!homepage
+            password: f036ba38-be17-4cec-aebe-907a319cc15c
+            node: pve
+      - Pihole 231:
+          href: https://192.168.0.231/admin
+          icon: pi-hole
+          widget:
+            type: pihole
+            url: http://192.168.0.231
+            version: 6
+            key: gLS37GXVK1pG04BW5/GLvHUb+noHHHKI4ulI8zAIpTQ=
+      - Pihole 232:
+          href: https://192.168.0.232/admin
+          icon: pi-hole
+          widget:
+            type: pihole
+            url: http://192.168.0.232
+            version: 6
+            key: DMnzOB1W/a2LmiTnXoXD2yCAI1R3cjTiTU2qh5iyC6Q=
+      - UniFi:
+          href: https://192.168.0.1
+          icon: unifi
+      - Tailscale:
+          href: https://login.tailscale.com/
+          icon: tailscale
+      - Truenas Scale:
+          href: https://trunas.petersimmons.com/
+          icon: truenas
+      - Cloudflare:
+          href: https://cloudflare.com/
+          icon: cloudflare
+      - Dashlane:
+          href: https://dashlane.com/
+          icon: si-dashlane
+    - Work:
+      - GMail:
+          href: https://mail.google.com/mail/u/0/#inbox
+          icon: gmail
+      - LinkedIn:
+          href: https://www.linkedin.com/feed/
+          icon: mdi-linkedin
+      - GitHub:
+          href: https://github.com/
+          icon: https://github.com/favicon.ico
+    - News & Entertainment:
+      - YouTube:
+          href: https://Youtube.com/
+          icon: youtube
+      - UnSplash:
+          href: https://unsplash.com/
+          icon: https://unsplash.com/favicon.ico
+      - Ground News:
+          href: https://groundnews.com/
+          icon: https://groundnews.com/favicon.ico
+      - X:
+          href: https://x.com/
+          icon: https://x.com/favicon.ico
+    - Financial:
+      - Fidelity:
+          href: https://fidelity.com/
+          icon: https://fidelity.com/favicon.ico
+      - Motley Fool:
+          href: https://fool.com/
+          icon: https://fool.com/favicon.ico
+      - Seeking Alpha:
+          href: https://seekingalpha.com/
+          icon: https://seekingalpha.com/favicon.ico
+      - Mission Wealth:
+          href: https://missionwealth.portal.tamaracinc.com/Login.aspx
+          icon: https://missionwealth.portal.tamaracinc.com/favicon.ico
+    - Charity:
+      - Woodstock City Church:
+          href: https://woodstockcity.org/
+          icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAP0AAAD9CAYAAAB3NXH8AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQwIDc5LjE2MDQ1MSwgMjAxNy8wNS8wNi0wMTowODoyMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTggKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NUYzNzJEODI3MEU0MTFFOUI5MzVCMUU2QTI4OUNENDQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NUYzNzJEODM3MEU0MTFFOUI5MzVCMUU2QTI4OUNENDQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1RjM3MkQ4MDcwRTQxMUU5QjkzNUIxRTZBMjg5Q0Q0NCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1RjM3MkQ4MTcwRTQxMUU5QjkzNUIxRTZBMjg5Q0Q0NCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PnLy7aUAACc9SURBVHja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
+      - New International:
+          href: https://newinternational.org/
+          icon: mdi-hand-heart
+      - Mercury One:
+          href: https://mercuryone.org/
+          icon: mdi-hand-heart
+      - The Nazarene Fund:
+          href: https://thenazarenefund.org/
+          icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB/ElEQVR42tXXu0scURTH8d3NrpuM5mWSRQjBkGhSSELYEMgmIYUmhW2CoIVaiCIWIuILQUFsBMG/wEobFVHRxsJCxE5BxEJLXd8KK75YlHWP3+IWg7jivasjXvh0c+75wZyZueO6lytSEHiIADx30fwp2jCHeryB28nmXTiBIIY5VCDdiQA5mEYMYrOGkBMB3HiNFixDsI8qeJ2cgwf4hhE0wp/gGs9tB0lL0PwxmhG8i6ckBXWIohePnGzuQQEitvnIdzLAeyxBbHrgS2bqs2Fd8/pUdENslpFtGsBCCXwaNV+wClFiKDMNEEK9Zo0XXZfcBq/JQLWi1CD4T+xBlFmk627yElPINQjwBJMQZQWZupv8xS5+Gw5vO0TZRo7uJg04Ngmg6gsRg+AAIZ1iHwaTDPAd+xBs4KNO8XPMIIo8wwDvsArBAgI6xV8RQRyVhgHeIgzBAHw6xb9wBEE//JrNX6AVUZyh2sUyDbCH//Bc8yX0A2M4hWATn3QDfMY2RAmjGNYVp+QgOrEJsRmHpRsgFRMQmyP04R8+IAt5qMEwtiCXaIfb5EXShDjkghOsYw3HkCscItf0Q5SFeYihCDqQlsxZIB9hiIYoxlWt/yZOv38wiVNIAnHsYBRFeHbT/wKvUI4hLGJFWcQQahGE5cSJNwOZSgZSXPd5nQNxW02sqZzRcgAAAABJRU5ErkJggg==
+      - OUR Rescue:
+          href: https://ourrescue.org/
+          icon: mdi-shield-account
+  settings.yaml: |
+    theme: dark
+    background:
+      image: https://images.unsplash.com/photo-1657632843433-e6a8b7451ac6?q=80&w=2212&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+      blur: sm # sm, "", md, xl... see https://tailwindcss.com/docs/backdrop-blur
+      saturate: 50 # 0, 50, 100... see https://tailwindcss.com/docs/backdrop-saturate
+      brightness: 50 # 0, 50, 75... see https://tailwindcss.com/docs/backdrop-brightness
+      opacity: 75 # 0-100
+  widgets.yaml: |
+    - resources:
+        backend: resources
+        expanded: true
+        cpu: true
+        memory: true
+    - search:
+        provider: custom
+        url: https://searxng.petersimmons.com/search?q=
+        target: _blank
+kind: ConfigMap
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","data":{"bookmarks.yaml":"- Developer:\n  - Github:\n    - abbr: GH\n      href: https://github.com/\n  - Dashboard Icons:\n    - abbr: DI\n      href: https://dashboardicons.com/ \n  - Homepage:\n    - abbr: HP\n      href: https://gethomepage.dev/\n  - Stable Diffusion:\n    - abbr: SD\n      href: https://levithan.petersimmons.com:7680\n  - ROCm Docker Image Builds:\n    - abbr: ROCm\n      href: https://rocm.docs.amd.com/projects/install-on-linux/en/latest/install/3rd-party/pytorch-install.html#using-pytorch-rocm-docker-image          \n","custom.css":"","custom.js":"","docker.yaml":"","kubernetes.yaml":"mode: disabled\n","proxmox.yaml":"url: https://pve.petersimmons.com:8006\nusername: root@pam!homepage\npassword: f036ba38-be17-4cec-aebe-907a319cc15c\nnode: pve\n","services.yaml":"- AI Tools:\n  - Grok:\n      href: https://x.ai/grok\n      icon: https://x.ai/favicon.ico\n  - ChatGPT:\n      href: https://chatgpt.com/\n      icon: https://openai.com/favicon.ico\n  - WindSurf:\n      href: https://windsurf.com/\n      icon: https://windsurf.com/favicon.ico\n  - Claude Usage:\n      href: https://claude.ai/settings/usage\n      icon: https://claude.ai/favicon.ico\n  - Claude Desktop:\n      href: https://claude.ai/new\n      icon: https://claude.ai/favicon.ico\n  - Perplexity:\n      href: https://perplexity.ai\n      icon: si-perplexity\n- Homelab Services:\n  - Nextcloud:\n      href: https://nextcloud.petersimmons.com/\n      icon: nextcloud\n  - Grafana:\n      href: https://grafana.petersimmons.com/\n      icon: grafana\n  - Prometheus:\n      href: https://prometheus.petersimmons.com/\n      icon: prometheus\n  - Searx:\n      href: https://searxng.petersimmons.com/\n      icon: searxng\n  - Rancher:\n      href: https://rancher.petersimmons.com/\n      icon: rancher\n  - Linkwarden:\n      href: https://linkwarden.petersimmons.com/\n      icon: linkwarden\n  - Traefik:\n      href: https://traefik.petersimmons.com/\n      icon: traefik\n  - Linkerd:\n      href: https://linkerd.petersimmons.com/\n      icon: https://linkerd.io/logos/linkerd.png\n  - Open-WebUI:\n      href: https://open-webui.petersimmons.com/\n      icon: open-webui\n  - N8N:\n      href: https://n8n.petersimmons.com/\n      icon: n8n\n- Services:\n  - Proxmox:\n      href: https://pve.petersimmons.com:8006\n      icon: proxmox\n      widget:\n        type: proxmox\n        url: https://pve.petersimmons.com:8006\n        username: root@pam!homepage\n        password: f036ba38-be17-4cec-aebe-907a319cc15c\n        node: pve\n  - Pihole 231:\n      href: https://192.168.0.231/admin\n      icon: pi-hole\n      widget:\n        type: pihole\n        url: http://192.168.0.231\n        version: 6\n        key: gLS37GXVK1pG04BW5/GLvHUb+noHHHKI4ulI8zAIpTQ=\n  - Pihole 232:\n      href: https://192.168.0.232/admin\n      icon: pi-hole\n      widget:\n        type: pihole\n        url: http://192.168.0.232\n        version: 6\n        key: DMnzOB1W/a2LmiTnXoXD2yCAI1R3cjTiTU2qh5iyC6Q=\n  - UniFi:\n      href: https://192.168.0.1\n      icon: unifi\n  - Tailscale:\n      href: https://login.tailscale.com/\n      icon: tailscale\n  - Truenas Scale:\n      href: https://trunas.petersimmons.com/\n      icon: truenas\n  - Cloudflare:\n      href: https://cloudflare.com/\n      icon: cloudflare\n  - Dashlane:\n      href: https://dashlane.com/\n      icon: si-dashlane\n- Work:\n  - GMail:\n      href: https://mail.google.com/mail/u/0/#inbox\n      icon: gmail\n  - LinkedIn:\n      href: https://www.linkedin.com/feed/\n      icon: mdi-linkedin\n  - GitHub:\n      href: https://github.com/\n      icon: https://github.com/favicon.ico\n- News \u0026 Entertainment:\n  - YouTube:\n      href: https://Youtube.com/\n      icon: youtube\n  - UnSplash:\n      href: https://unsplash.com/\n      icon: https://unsplash.com/favicon.ico\n  - Ground News:\n      href: https://groundnews.com/\n      icon: https://groundnews.com/favicon.ico\n  - X:\n      href: https://x.com/\n      icon: https://x.com/favicon.ico\n- Financial:\n  - Fidelity:\n      href: https://fidelity.com/\n      icon: https://fidelity.com/favicon.ico\n  - Motley Fool:\n      href: https://fool.com/\n      icon: https://fool.com/favicon.ico\n  - Seeking Alpha:\n      href: https://seekingalpha.com/\n      icon: https://seekingalpha.com/favicon.ico\n  - Mission Wealth:\n      href: https://missionwealth.portal.tamaracinc.com/Login.aspx\n      icon: https://missionwealth.portal.tamaracinc.com/favicon.ico\n- Charity:\n  - Woodstock City Church:\n      href: https://woodstockcity.org/\n      icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAP0AAAD9CAYAAAB3NXH8AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQwIDc5LjE2MDQ1MSwgMjAxNy8wNS8wNi0wMTowODoyMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTggKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NUYzNzJEODI3MEU0MTFFOUI5MzVCMUU2QTI4OUNENDQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NUYzNzJEODM3MEU0MTFFOUI5MzVCMUU2QTI4OUNENDQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1RjM3MkQ4MDcwRTQxMUU5QjkzNUIxRTZBMjg5Q0Q0NCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1RjM3MkQ4MTcwRTQxMUU5QjkzNUIxRTZBMjg5Q0Q0NCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PnLy7aUAACc9SURBVHja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\n  - New International:\n      href: https://newinternational.org/\n      icon: mdi-hand-heart\n  - Mercury One:\n      href: https://mercuryone.org/\n      icon: mdi-hand-heart\n  - The Nazarene Fund:\n      href: https://thenazarenefund.org/\n      icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB/ElEQVR42tXXu0scURTH8d3NrpuM5mWSRQjBkGhSSELYEMgmIYUmhW2CoIVaiCIWIuILQUFsBMG/wEobFVHRxsJCxE5BxEJLXd8KK75YlHWP3+IWg7jivasjXvh0c+75wZyZueO6lytSEHiIADx30fwp2jCHeryB28nmXTiBIIY5VCDdiQA5mEYMYrOGkBMB3HiNFixDsI8qeJ2cgwf4hhE0wp/gGs9tB0lL0PwxmhG8i6ckBXWIohePnGzuQQEitvnIdzLAeyxBbHrgS2bqs2Fd8/pUdENslpFtGsBCCXwaNV+wClFiKDMNEEK9Zo0XXZfcBq/JQLWi1CD4T+xBlFmk627yElPINQjwBJMQZQWZupv8xS5+Gw5vO0TZRo7uJg04Ngmg6gsRg+AAIZ1iHwaTDPAd+xBs4KNO8XPMIIo8wwDvsArBAgI6xV8RQRyVhgHeIgzBAHw6xb9wBEE//JrNX6AVUZyh2sUyDbCH//Bc8yX0A2M4hWATn3QDfMY2RAmjGNYVp+QgOrEJsRmHpRsgFRMQmyP04R8+IAt5qMEwtiCXaIfb5EXShDjkghOsYw3HkCscItf0Q5SFeYihCDqQlsxZIB9hiIYoxlWt/yZOv38wiVNIAnHsYBRFeHbT/wKvUI4hLGJFWcQQahGE5cSJNwOZSgZSXPd5nQNxW02sqZzRcgAAAABJRU5ErkJggg==\n  - OUR Rescue:\n      href: https://ourrescue.org/\n      icon: mdi-shield-account\n","settings.yaml":"theme: dark\nbackground:\n  image: https://images.unsplash.com/photo-1657632843433-e6a8b7451ac6?q=80\u0026w=2212\u0026auto=format\u0026fit=crop\u0026ixlib=rb-4.1.0\u0026ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\n  blur: sm # sm, \"\", md, xl... see https://tailwindcss.com/docs/backdrop-blur\n  saturate: 50 # 0, 50, 100... see https://tailwindcss.com/docs/backdrop-saturate\n  brightness: 50 # 0, 50, 75... see https://tailwindcss.com/docs/backdrop-brightness\n  opacity: 75 # 0-100\n","widgets.yaml":"- resources:\n    backend: resources\n    expanded: true\n    cpu: true\n    memory: true\n- search:\n    provider: custom\n    url: https://searxng.petersimmons.com/search?q=\n    target: _blank\n"},"kind":"ConfigMap","metadata":{"annotations":{},"creationTimestamp":"2025-12-28T04:13:19Z","labels":{"app.kubernetes.io/name":"homepage"},"name":"homepage","namespace":"default","resourceVersion":"21774703","uid":"94bc99f1-b96f-43a3-92c9-74d52a2a8be7"}}
+  creationTimestamp: "2025-12-28T04:13:19Z"
+  labels:
+    app.kubernetes.io/name: homepage
+  name: homepage
+  namespace: default
+  resourceVersion: "21784255"
+  uid: 94bc99f1-b96f-43a3-92c9-74d52a2a8be7

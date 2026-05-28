@@ -1,0 +1,77 @@
+- Security:
+  - SentinelOne - Purple:
+      href: https://usea1-purple.sentinelone.net/login
+      icon: https://usea1-purple.sentinelone.net/favicon.ico
+  - SentinelOne - Demo:
+      href: https://demo.sentinelone.net/
+      icon: https://demo.sentinelone.net/favicon.ico 
+  - Okta:
+      href: https://sentinelone.okta.com/oauth2/v1/authorize?client_id=okta.2b1959c8-bcc0-56eb-a589-cfcfb7422f26&code_challenge=8wwQ6pAxpEVsSNsPKf8afOep51lEXSDzfZ6g5jdX0hc&code_challenge_method=S256&nonce=16yY5E8auyWw2woKv6wukXfpGebCaBz1F3eM2hypBnItZjNwR9ZW2N6GH9lWZDbE&redirect_uri=https%3A%2F%2Fsentinelone.okta.com%2Fenduser%2Fcallback&response_type=code&state=FcISTxWvgXqpbkU5ZRE9yOvKYgVeWGTrP78ZMN9gEKEAGWuc3BGbjoxla8I2yYRQ&scope=openid%20profile%20email%20okta.users.read.self%20okta.users.manage.self%20okta.internal.enduser.read%20okta.internal.enduser.manage%20okta.enduser.dashboard.read%20okta.enduser.dashboard.manage%20okta.myAccount.sessions.manage
+      icon: https://sentinelone.okta.com/favicon.ico
+  - Pyxis:
+      href: https://pyxis.s1-threatops.io/login    
+      icon: https://pyxis.s1-threatops.io/assets/pyxis_logo_small-25ec7a03.png
+  - GMail:
+      href: https://mail.google.com/mail/u/0/#inbox
+      icon: gmail
+- Homelab Services:
+  - Searx:
+      href: https://search.petersimmons.com/
+      icon: searxng
+  - Rancher:
+      href: https://rancher.petersimmons.com/
+      icon: rancher 
+  - Linkwarden:
+      href: https://linkwarden.petersimmons.com/
+      icon: linkwarden
+  - Traefik:
+      href: https://traefik.petersimmons.com/
+      icon: traefik
+  - Open-WebUI:
+      href: https://open-webui.petersimmons.com/
+      icon: open-webui
+  - N8N:
+      href: http://leviathan.petersimmons.com:5678
+      icon: n8n
+- News & Entertainment:
+  - YouTube:
+      href: https://Youtube.com/
+      icon: youtube.png
+  - UnSplash:
+      href: https://unsplash.com/
+      icon: https://unsplash.com/favicon.ico
+  - Ground News:
+      href: https://groundnews.com/
+      icon: https://groundnews.com/favicon.ico
+- Services:
+  - Dashlane:
+      href: https://dashlane.com/
+      icon: https://www.dashlane.com/uploads/2023/11/Home-Header-Image-svg.png
+  - Proxmox:
+      href: https://pve.petersimmons.com:8006
+      icon: proxmox
+  - Pihole 241:
+      href: https://192.168.0.241/admin
+      icon: pi-hole
+  - Pihole 242:
+      href: https://192.168.0.242/admin
+      icon: pi-hole
+  - UniFi:
+      href: https://192.168.0.1
+      icon: unifi
+  - Tailscale:
+      href: https://login.tailscale.com/
+      icon: tailscale
+  - Truenas Scale:
+      href: https://trunas.petersimmons.com/
+      icon: truenas
+  - Cloudflare:
+      href: https://cloudflare.com/
+      icon: cloudflare
+- Financial:
+  - Fidelity:
+      href: https://fidelity.com/
+      icon: https://fidelity.com/favicon.ico
+  - Motley Fool:
+      href: https://fool.com/
+      icon: https://fool.com/favicon.ico

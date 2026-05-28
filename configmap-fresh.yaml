@@ -1,0 +1,30 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: homepage-config
+  namespace: default
+data:
+  kubernetes.yaml: |
+    mode: disabled
+  settings.yaml: |
+    theme: dark
+  services.yaml: |
+    - Work:
+        - Test Service:
+            href: https://example.com
+            icon: test
+  bookmarks.yaml: |
+    - Test:
+        - Example:
+            abbr: EX
+            href: https://example.com
+  widgets.yaml: |
+    - resources:
+        backend: resources
+        expanded: true
+        cpu: true
+        memory: true
+  docker.yaml: ""
+  custom.css: ""
+  custom.js: ""

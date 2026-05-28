@@ -6,6 +6,218 @@ Homepage has had recurring API errors across multiple sessions, requiring signif
 
 ---
 
+## 🚨 CRITICAL LESSON: HTTP 200 ≠ Homepage Is Working
+
+**Added: 2025-12-20**
+
+### The Most Important Homepage Lesson
+
+**Homepage is NOT like other Kubernetes applications.** Standard health checks are insufficient.
+
+**The Problem:**
+- Pod shows Running ✅
+- Service returns HTTP 200 ✅
+- But page displays "API Error" in every widget ❌
+
+**Why This Happens:**
+- Homepage's architecture allows it to return HTTP 200 while being completely broken
+- Widgets can fail to render but the page still loads
+- API errors appear in the HTML content, not the HTTP status code
+
+**The Solution:**
+```bash
+# DON'T rely on this alone
+curl -s -o /dev/null -w "%{http_code}" https://homepage.petersimmons.com
+# Returns: 200 (but might be broken!)
+
+# DO download and inspect actual HTML
+curl -s https://homepage.petersimmons.com | grep -i "api error"
+# Must return: (empty - no matches)
+```
+
+**Mandatory Testing Requirements:**
+1. ✅ Check HTTP status code (baseline)
+2. ✅ Download actual HTML content
+3. ✅ Grep for "API Error" in HTML (CRITICAL)
+4. ✅ Verify widgets show data, not error messages
+5. ✅ Visual browser verification
+
+**See:** `/home/psimmons/projects/kubernetes/homepage/TESTING.md` for complete testing procedures.
+
+**This lesson MUST be remembered for every Homepage change.**
+
+---
+
+## 🚨 CRITICAL LESSON: Widget Functionality Can Break Silently
+
+**Added: 2025-12-20**
+
+### The Widget Failure Problem
+
+**Configuration changes can break widget dynamic functionality without showing obvious errors.**
+
+**Recent Failures Documented:**
+1. **Proxmox Widget** - Lost dynamic functionality (no CPU/memory/storage stats)
+2. **Pihole Widgets (both)** - Lost dynamic functionality (no query counts or blocking stats)
+
+**The Danger:**
+- HTTP 200 status ✅
+- No errors in logs ✅
+- Widgets appear on page ✅
+- **But widgets show NO dynamic data** ❌
+
+**Why This Happens:**
+- Widget configuration can be inadvertently removed/changed
+- Backend API credentials lost during ConfigMap updates
+- Network policies blocking widget API calls
+- Service configuration changes breaking widget integration
+
+**The Solution:**
+```bash
+# After ANY Homepage config change, verify widgets work:
+# 1. Open Homepage in browser
+# 2. Check Proxmox widget shows live CPU/memory/storage stats
+# 3. Check both Pihole widgets show query counts and blocking stats
+# 4. Verify resource widgets show real data (not dashes/zeros)
+```
+
+**Mandatory Widget Testing:**
+- Proxmox: Must show live server stats
+- Pihole (both instances): Must show DNS query metrics
+- Resources: Must show actual CPU/memory/disk usage
+- Any other configured widgets must display live data
+
+**If widgets show static/placeholder data → Configuration failure, restore from backup**
+
+**See:** `/home/psimmons/projects/kubernetes/homepage/TESTING.md` - Failure Mode 4
+
+---
+
+## 🚨 CRITICAL LESSON: Favicon Loading Must Be Verified
+
+**Added: 2025-12-20**
+
+### The Favicon Problem
+
+**Automatic favicon fetching fails for many services, causing broken icons.**
+
+**Recent Failures Documented:**
+- LinkedIn - Incorrect/broken favicon
+- Perplexity - Incorrect/broken favicon
+- Linkerd - Incorrect/broken favicon
+- Dashlane - Incorrect/broken favicon
+
+**Why This Happens:**
+- Automatic favicon fetching relies on service's /favicon.ico
+- Many sites don't host favicons at standard location
+- CORS policies block favicon access
+- Homepage cannot fetch some favicons due to CSP restrictions
+
+**The Solution:**
+```yaml
+# DON'T rely on automatic favicon fetching
+- LinkedIn:
+    icon: https://linkedin.com/favicon.ico  # May fail
+
+# DO use icon libraries
+- LinkedIn:
+    icon: mdi-linkedin  # More reliable
+```
+
+**Mandatory Favicon Testing:**
+- After adding/changing services, open Homepage in browser
+- Verify ALL service icons load correctly
+- Check browser network tab for favicon 404 errors
+- Use icon libraries (mdi, si) instead of URLs when possible
+
+**Known Problematic Services:**
+- LinkedIn → Use `mdi-linkedin` (URL-based icons fail)
+- Perplexity → Use `si-perplexity` (Simple Icons)
+- Linkerd → Use `https://linkerd.io/logos/linkerd.png` (full logo URL works)
+- Dashlane → Use `si-dashlane` (Simple Icons)
+
+**Verified Working Solutions (2025-12-20):**
+```yaml
+# LinkedIn - Use Material Design Icons
+- LinkedIn:
+    icon: mdi-linkedin  # ✅ WORKS
+
+# NOT this (fails to load):
+- LinkedIn:
+    icon: https://linkedin.com/favicon.ico  # ❌ FAILS
+    icon: https://static.licdn.com/aero-v1/sc/h/al2o9zrvru7aqj8e1x2rzsrca  # ❌ FAILS
+
+# Linkerd - Use full logo URL
+- Linkerd:
+    icon: https://linkerd.io/logos/linkerd.png  # ✅ WORKS
+
+# Perplexity - Use Simple Icons
+- Perplexity:
+    icon: si-perplexity  # ✅ WORKS
+
+# Dashlane - Use Simple Icons
+- Dashlane:
+    icon: si-dashlane  # ✅ WORKS
+```
+
+**Key Lesson:** Prefer icon libraries (mdi-*, si-*, built-in names) over URL-based icons. LinkedIn especially requires Material Design Icons, not URL fetching.
+
+**See:** `/home/psimmons/projects/kubernetes/homepage/TESTING.md` - Failure Mode 5
+
+---
+
+## 🚨 CRITICAL LESSON: Search Widget Configuration Must Be Exact
+
+**Added: 2025-12-20**
+
+### The Search Widget Problem
+
+**The search widget shows "Something went wrong" if provider/URL configuration is incorrect.**
+
+**What Broke:**
+Search widget changed from working `custom` provider to non-working `searxng` provider.
+
+**Working Configuration (Dec 2):**
+```yaml
+- search:
+    provider: custom
+    url: https://searxng.petersimmons.com/search?q=
+    target: _blank
+```
+
+**Broken Configuration (Dec 20):**
+```yaml
+- search:
+    provider: searxng  # ❌ Causes "Something went wrong"
+    url: https://searxng.petersimmons.com  # Missing /search?q=
+    target: _blank
+```
+
+**The Fix:**
+Must use `provider: custom` with full search URL including `/search?q=` parameter.
+
+**Root Cause:**
+- Homepage's `searxng` provider may have compatibility issues
+- Using `custom` provider with explicit URL is more reliable
+- URL must include the search query parameter (`?q=`)
+
+**Verification:**
+```bash
+# Check search widget configuration
+kubectl get configmap homepage -o yaml | grep -A 5 "search:"
+
+# Should show:
+#   provider: custom
+#   url: https://searxng.petersimmons.com/search?q=
+```
+
+**Mandatory After Every Change:**
+- Test search bar in browser
+- Verify no "Something went wrong" error
+- Try an actual search to confirm functionality
+
+---
+
 ## Core Issues Identified
 
 ### 1. Using `:latest` Tag Instead of Pinned Versions
